@@ -7,23 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24F63818F5C9DD58153809A1 /* EventTag+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ABCA1A57C9CFDBA81A616E /* EventTag+Schema.swift */; };
+		2D0F6E8F4B2840E448416633 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = F7F1C10248E904CC9CCAF441 /* amplifyconfiguration.json */; };
+		2F777DFFD1F3FA929A79B007 /* Location+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE09F2E652E73F1773E268 /* Location+Schema.swift */; };
+		4BEF5D401EC72F48612FB52E /* Occurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DEB9262ABE5C035C287BBC /* Occurrence.swift */; };
 		7C11A31C285AB94C00B0BB91 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C11A31B285AB94C00B0BB91 /* AuthView.swift */; };
 		7C11A31F285AEFB500B0BB91 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 7C11A31E285AEFB500B0BB91 /* AWSAPIPlugin */; };
 		7C11A321285AEFB500B0BB91 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 7C11A320285AEFB500B0BB91 /* AWSCognitoAuthPlugin */; };
 		7C11A323285AEFB500B0BB91 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 7C11A322285AEFB500B0BB91 /* AWSDataStorePlugin */; };
 		7C11A325285AEFB500B0BB91 /* AWSS3StoragePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 7C11A324285AEFB500B0BB91 /* AWSS3StoragePlugin */; };
 		7C11A327285AEFB500B0BB91 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 7C11A326285AEFB500B0BB91 /* Amplify */; };
-		7CCDBF9E285AACD100C88795 /* MetalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCDBF9D285AACD100C88795 /* MetalogApp.swift */; };
+		7C180B66286524FA00A7CB5E /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B65286524FA00A7CB5E /* DashboardScreen.swift */; };
+		7C180B6A286526B500A7CB5E /* DashboardComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B69286526B500A7CB5E /* DashboardComposits.swift */; };
+		7C180B6C28652A1000A7CB5E /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B6B28652A1000A7CB5E /* FloatingActionButton.swift */; };
+		7C180B6E28652E2F00A7CB5E /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B6D28652E2F00A7CB5E /* NewEventView.swift */; };
+		7C180B7028652ECD00A7CB5E /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B6F28652ECD00A7CB5E /* FormField.swift */; };
+		7C180B72286584B100A7CB5E /* NewEventComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B71286584B100A7CB5E /* NewEventComposits.swift */; };
+		7CB867F1285B823E00A6AE3F /* RootComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB867F0285B823E00A6AE3F /* RootComposits.swift */; };
+		7CB867F4285B85E300A6AE3F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB867F3285B85E300A6AE3F /* ComposableArchitecture */; };
+		7CB867F6285B8D2F00A6AE3F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB867F5285B8D2F00A6AE3F /* RootView.swift */; };
+		7CB8681328623BC800A6AE3F /* EventComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8681228623BC800A6AE3F /* EventComposits.swift */; };
+		7CB8681528623C3E00A6AE3F /* Event+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8681428623C3E00A6AE3F /* Event+Extensions.swift */; };
+		7CB8681828623EDF00A6AE3F /* MetalogError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8681728623EDF00A6AE3F /* MetalogError.swift */; };
+		7CB8681A2862440600A6AE3F /* SystemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB868192862440600A6AE3F /* SystemEnvironment.swift */; };
+		7CB8681C286260EC00A6AE3F /* EventEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8681B286260EC00A6AE3F /* EventEffects.swift */; };
+		7CB8681E286265AC00A6AE3F /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8681D286265AC00A6AE3F /* EventView.swift */; };
+		7CB86820286268E300A6AE3F /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8681F286268E300A6AE3F /* EventListView.swift */; };
+		7CCDBF9E285AACD100C88795 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCDBF9D285AACD100C88795 /* AppMain.swift */; };
 		7CCDBFA2285AACD200C88795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CCDBFA1285AACD200C88795 /* Assets.xcassets */; };
 		7CCDBFA5285AACD200C88795 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CCDBFA4285AACD200C88795 /* Preview Assets.xcassets */; };
+		89B2FF9969E7D7357177438D /* Event+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4218EFB28D8C4B29288D8D1 /* Event+Schema.swift */; };
+		95ECD27A528B93E7BDFDC2F3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4C00CA2A62C86C97CFA78 /* Location.swift */; };
+		9CFF797F9F4DD561862FAB15 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1B5BF054CA48F919240B9 /* Tag.swift */; };
+		A22F9ECDD709DDBEE8D3E3AB /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C2A2CE1517B03756C4436 /* AmplifyModels.swift */; };
+		AE8683936B5DD0878DD50ACE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E26F49D8BD81C2F1BACEA /* Event.swift */; };
+		BAD543EB55148C2D89CD9F76 /* Occurrence+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = D944FD753CECF5ABAFA22C17 /* Occurrence+Schema.swift */; };
+		C5229F2F9C10C200698348BD /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47252EE7ACBF66D02AF19495 /* EventTag.swift */; };
+		EB29FC565F2A0009A372BFC7 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFD1B9AC0B0846A9DA8ED1A /* awsconfiguration.json */; };
+		F226286E823A1058C8F5163E /* Tag+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31995DFBD2C167ED51130B /* Tag+Schema.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12FE09F2E652E73F1773E268 /* Location+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Location+Schema.swift"; path = "amplify/generated/models/Location+Schema.swift"; sourceTree = "<group>"; };
+		3BD1B5BF054CA48F919240B9 /* Tag.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Tag.swift; path = amplify/generated/models/Tag.swift; sourceTree = "<group>"; };
+		3CFD1B9AC0B0846A9DA8ED1A /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		47252EE7ACBF66D02AF19495 /* EventTag.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = EventTag.swift; path = amplify/generated/models/EventTag.swift; sourceTree = "<group>"; };
 		7C11A31B285AB94C00B0BB91 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		7C180B65286524FA00A7CB5E /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
+		7C180B69286526B500A7CB5E /* DashboardComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComposits.swift; sourceTree = "<group>"; };
+		7C180B6B28652A1000A7CB5E /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
+		7C180B6D28652E2F00A7CB5E /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
+		7C180B6F28652ECD00A7CB5E /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		7C180B71286584B100A7CB5E /* NewEventComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventComposits.swift; sourceTree = "<group>"; };
+		7CB867F0285B823E00A6AE3F /* RootComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComposits.swift; sourceTree = "<group>"; };
+		7CB867F5285B8D2F00A6AE3F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7CB8681228623BC800A6AE3F /* EventComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComposits.swift; sourceTree = "<group>"; };
+		7CB8681428623C3E00A6AE3F /* Event+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Extensions.swift"; sourceTree = "<group>"; };
+		7CB8681728623EDF00A6AE3F /* MetalogError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalogError.swift; sourceTree = "<group>"; };
+		7CB868192862440600A6AE3F /* SystemEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEnvironment.swift; sourceTree = "<group>"; };
+		7CB8681B286260EC00A6AE3F /* EventEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEffects.swift; sourceTree = "<group>"; };
+		7CB8681D286265AC00A6AE3F /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		7CB8681F286268E300A6AE3F /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		7CCDBF9A285AACD100C88795 /* metalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CCDBF9D285AACD100C88795 /* MetalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalogApp.swift; sourceTree = "<group>"; };
+		7CCDBF9D285AACD100C88795 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		7CCDBFA1285AACD200C88795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CCDBFA4285AACD200C88795 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96DEB9262ABE5C035C287BBC /* Occurrence.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Occurrence.swift; path = amplify/generated/models/Occurrence.swift; sourceTree = "<group>"; };
+		AEA4C00CA2A62C86C97CFA78 /* Location.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Location.swift; path = amplify/generated/models/Location.swift; sourceTree = "<group>"; };
+		C24C2A2CE1517B03756C4436 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
+		C4218EFB28D8C4B29288D8D1 /* Event+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Event+Schema.swift"; path = "amplify/generated/models/Event+Schema.swift"; sourceTree = "<group>"; };
+		C63E26F49D8BD81C2F1BACEA /* Event.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Event.swift; path = amplify/generated/models/Event.swift; sourceTree = "<group>"; };
+		CE31995DFBD2C167ED51130B /* Tag+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Tag+Schema.swift"; path = "amplify/generated/models/Tag+Schema.swift"; sourceTree = "<group>"; };
+		D944FD753CECF5ABAFA22C17 /* Occurrence+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Occurrence+Schema.swift"; path = "amplify/generated/models/Occurrence+Schema.swift"; sourceTree = "<group>"; };
+		E4ABCA1A57C9CFDBA81A616E /* EventTag+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "EventTag+Schema.swift"; path = "amplify/generated/models/EventTag+Schema.swift"; sourceTree = "<group>"; };
+		F7F1C10248E904CC9CCAF441 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +90,7 @@
 			files = (
 				7C11A323285AEFB500B0BB91 /* AWSDataStorePlugin in Frameworks */,
 				7C11A327285AEFB500B0BB91 /* Amplify in Frameworks */,
+				7CB867F4285B85E300A6AE3F /* ComposableArchitecture in Frameworks */,
 				7C11A31F285AEFB500B0BB91 /* AWSAPIPlugin in Frameworks */,
 				7C11A321285AEFB500B0BB91 /* AWSCognitoAuthPlugin in Frameworks */,
 				7C11A325285AEFB500B0BB91 /* AWSS3StoragePlugin in Frameworks */,
@@ -42,11 +100,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21CA7CDF06F698FDD88C236A /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				3CFD1B9AC0B0846A9DA8ED1A /* awsconfiguration.json */,
+				F7F1C10248E904CC9CCAF441 /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			sourceTree = "<group>";
+		};
+		7C180B642865118D00A7CB5E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7C11A31B285AB94C00B0BB91 /* AuthView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7C180B682865267A00A7CB5E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7C180B65286524FA00A7CB5E /* DashboardScreen.swift */,
+				7C180B69286526B500A7CB5E /* DashboardComposits.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		7CB867ED285B81E500A6AE3F /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				7CB867F0285B823E00A6AE3F /* RootComposits.swift */,
+				7CB867F5285B8D2F00A6AE3F /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		7CB8681128623BA700A6AE3F /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				7CB8681228623BC800A6AE3F /* EventComposits.swift */,
+				7CB8681428623C3E00A6AE3F /* Event+Extensions.swift */,
+				7CB8681B286260EC00A6AE3F /* EventEffects.swift */,
+				7CB8681D286265AC00A6AE3F /* EventView.swift */,
+				7CB8681F286268E300A6AE3F /* EventListView.swift */,
+				7C180B6D28652E2F00A7CB5E /* NewEventView.swift */,
+				7C180B71286584B100A7CB5E /* NewEventComposits.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		7CB8681628623EAD00A6AE3F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7CB8681728623EDF00A6AE3F /* MetalogError.swift */,
+				7CB868192862440600A6AE3F /* SystemEnvironment.swift */,
+				7C180B6B28652A1000A7CB5E /* FloatingActionButton.swift */,
+				7C180B6F28652ECD00A7CB5E /* FormField.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		7CCDBF91285AACD100C88795 = {
 			isa = PBXGroup;
 			children = (
 				7CCDBF9C285AACD100C88795 /* metalog */,
 				7CCDBF9B285AACD100C88795 /* Products */,
+				21CA7CDF06F698FDD88C236A /* AmplifyConfig */,
+				E2A822CAEB7A9805F198716F /* AmplifyModels */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,8 +181,12 @@
 		7CCDBF9C285AACD100C88795 /* metalog */ = {
 			isa = PBXGroup;
 			children = (
-				7CCDBF9D285AACD100C88795 /* MetalogApp.swift */,
-				7C11A31B285AB94C00B0BB91 /* AuthView.swift */,
+				7CCDBF9D285AACD100C88795 /* AppMain.swift */,
+				7C180B642865118D00A7CB5E /* Auth */,
+				7CB8681628623EAD00A6AE3F /* Shared */,
+				7C180B682865267A00A7CB5E /* Dashboard */,
+				7CB867ED285B81E500A6AE3F /* Root */,
+				7CB8681128623BA700A6AE3F /* Event */,
 				7CCDBFA1285AACD200C88795 /* Assets.xcassets */,
 				7CCDBFA3285AACD200C88795 /* Preview Content */,
 			);
@@ -75,6 +199,24 @@
 				7CCDBFA4285AACD200C88795 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E2A822CAEB7A9805F198716F /* AmplifyModels */ = {
+			isa = PBXGroup;
+			children = (
+				C24C2A2CE1517B03756C4436 /* AmplifyModels.swift */,
+				C4218EFB28D8C4B29288D8D1 /* Event+Schema.swift */,
+				C63E26F49D8BD81C2F1BACEA /* Event.swift */,
+				E4ABCA1A57C9CFDBA81A616E /* EventTag+Schema.swift */,
+				47252EE7ACBF66D02AF19495 /* EventTag.swift */,
+				12FE09F2E652E73F1773E268 /* Location+Schema.swift */,
+				AEA4C00CA2A62C86C97CFA78 /* Location.swift */,
+				D944FD753CECF5ABAFA22C17 /* Occurrence+Schema.swift */,
+				96DEB9262ABE5C035C287BBC /* Occurrence.swift */,
+				CE31995DFBD2C167ED51130B /* Tag+Schema.swift */,
+				3BD1B5BF054CA48F919240B9 /* Tag.swift */,
+			);
+			name = AmplifyModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +241,7 @@
 				7C11A322285AEFB500B0BB91 /* AWSDataStorePlugin */,
 				7C11A324285AEFB500B0BB91 /* AWSS3StoragePlugin */,
 				7C11A326285AEFB500B0BB91 /* Amplify */,
+				7CB867F3285B85E300A6AE3F /* ComposableArchitecture */,
 			);
 			productName = metalog;
 			productReference = 7CCDBF9A285AACD100C88795 /* metalog.app */;
@@ -130,6 +273,7 @@
 			mainGroup = 7CCDBF91285AACD100C88795;
 			packageReferences = (
 				7C11A31D285AEFB500B0BB91 /* XCRemoteSwiftPackageReference "amplify-ios" */,
+				7CB867F2285B85E300A6AE3F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 7CCDBF9B285AACD100C88795 /* Products */;
 			projectDirPath = "";
@@ -147,6 +291,8 @@
 			files = (
 				7CCDBFA5285AACD200C88795 /* Preview Assets.xcassets in Resources */,
 				7CCDBFA2285AACD200C88795 /* Assets.xcassets in Resources */,
+				EB29FC565F2A0009A372BFC7 /* awsconfiguration.json in Resources */,
+				2D0F6E8F4B2840E448416633 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,8 +303,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CCDBF9E285AACD100C88795 /* MetalogApp.swift in Sources */,
+				7CB867F6285B8D2F00A6AE3F /* RootView.swift in Sources */,
+				7CCDBF9E285AACD100C88795 /* AppMain.swift in Sources */,
+				7C180B6C28652A1000A7CB5E /* FloatingActionButton.swift in Sources */,
+				7CB8681828623EDF00A6AE3F /* MetalogError.swift in Sources */,
+				7CB8681328623BC800A6AE3F /* EventComposits.swift in Sources */,
+				7C180B6A286526B500A7CB5E /* DashboardComposits.swift in Sources */,
 				7C11A31C285AB94C00B0BB91 /* AuthView.swift in Sources */,
+				7CB867F1285B823E00A6AE3F /* RootComposits.swift in Sources */,
+				A22F9ECDD709DDBEE8D3E3AB /* AmplifyModels.swift in Sources */,
+				7C180B66286524FA00A7CB5E /* DashboardScreen.swift in Sources */,
+				89B2FF9969E7D7357177438D /* Event+Schema.swift in Sources */,
+				AE8683936B5DD0878DD50ACE /* Event.swift in Sources */,
+				24F63818F5C9DD58153809A1 /* EventTag+Schema.swift in Sources */,
+				C5229F2F9C10C200698348BD /* EventTag.swift in Sources */,
+				7CB86820286268E300A6AE3F /* EventListView.swift in Sources */,
+				7C180B72286584B100A7CB5E /* NewEventComposits.swift in Sources */,
+				7C180B7028652ECD00A7CB5E /* FormField.swift in Sources */,
+				2F777DFFD1F3FA929A79B007 /* Location+Schema.swift in Sources */,
+				95ECD27A528B93E7BDFDC2F3 /* Location.swift in Sources */,
+				7CB8681A2862440600A6AE3F /* SystemEnvironment.swift in Sources */,
+				BAD543EB55148C2D89CD9F76 /* Occurrence+Schema.swift in Sources */,
+				7CB8681E286265AC00A6AE3F /* EventView.swift in Sources */,
+				7C180B6E28652E2F00A7CB5E /* NewEventView.swift in Sources */,
+				4BEF5D401EC72F48612FB52E /* Occurrence.swift in Sources */,
+				F226286E823A1058C8F5163E /* Tag+Schema.swift in Sources */,
+				7CB8681528623C3E00A6AE3F /* Event+Extensions.swift in Sources */,
+				9CFF797F9F4DD561862FAB15 /* Tag.swift in Sources */,
+				7CB8681C286260EC00A6AE3F /* EventEffects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +545,14 @@
 				kind = branch;
 			};
 		};
+		7CB867F2285B85E300A6AE3F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -400,6 +580,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7C11A31D285AEFB500B0BB91 /* XCRemoteSwiftPackageReference "amplify-ios" */;
 			productName = Amplify;
+		};
+		7CB867F3285B85E300A6AE3F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CB867F2285B85E300A6AE3F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

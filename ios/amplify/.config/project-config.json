@@ -1,0 +1,8 @@
+{
+  "providers": [
+    "awscloudformation"
+  ],
+  "projectName": "metalog",
+  "version": "3.1",
+  "frontend": "ios"
+}
