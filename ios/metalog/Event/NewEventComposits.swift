@@ -18,15 +18,14 @@ struct NewEventEnvironment {
     let eventClient: EventClient
 }
 
-typealias NewEventReducer = Reducer<NewEventState, NewEventAction, SystemEnvironment<NewEventEnvironment>>
-
-let newEventReducer = NewEventReducer { state, action, sysEnv in
-    debugPrint(action)
+let newEventReducer = Reducer<NewEventState, NewEventAction, NewEventEnvironment> { state, action, env in
     switch action {
     case .newEventChanged(let newEvent):
         state.newEvent = newEvent
     case .saveNewEvent:
-        break
+        return env.eventClient.createEvent(state.newEvent)
+            .catchToEffect(NewEventAction.newEventSaved)
+        
     case .newEventSaved(.success(let event)):
         break
     case .newEventSaved(.failure(let error)):

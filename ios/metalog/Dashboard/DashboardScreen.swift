@@ -22,12 +22,22 @@ struct DashboardScreen: View {
                     systemImageName: "square.and.pencil",
                     action: { viewStore.send(.navigationAction(.goTo(.createNewEvent))) }
                 ) {
-                    EventListView(store: store)
+                    EventListView(
+                        store: store.scope(
+                            state: \.eventListState,
+                            action: RootAction.eventListAction
+                        )
+                    )
                 }
                 .navigationTitle("Events")
                 .navigationDestination(for: Route.self) { destination in
                     if destination == .createNewEvent {
-                        NewEventScreen(store: store)
+                        NewEventScreen(
+                            store: store.scope(
+                                state: \.newEventState,
+                                action: RootAction.newEventAction
+                            )
+                        )
                     }
                 }
             }

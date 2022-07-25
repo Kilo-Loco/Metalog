@@ -36,14 +36,15 @@ let navigationReducer = NavigationReducer { state, action, sysEnv in
 struct RootState: Equatable {
     var navigationState = NavigationState()
     var dashboardState = DashboardState()
-    var eventState = EventState()
+    var eventListState = EventListState()
+    var newEventState = NewEventState()
 }
 
 enum RootAction {
     case dashboardAction(DashboardAction)
     case eventListAction(EventListAction)
     case navigationAction(NavigationAction)
-    case event(id: Event.ID, action: EventAction)
+    case newEventAction(NewEventAction)
 }
 
 struct RootEnvironment { }
@@ -63,10 +64,24 @@ let rootReducer = RootReducer.combine(
         environment: { _ in NavigationEnvironment() }
     ),
     eventsReducer.pullback(
-        state: \.eventState,
+        state: \.eventListState,
         action: /RootAction.eventListAction,
         environment: { _ in EventEnvironment(eventClient: .live) }
-    )
+    ),
+    newEventReducer.pullback(
+        state: \.newEventState,
+        action: /RootAction.newEventAction,
+        environment: { _ in NewEventEnvironment(eventClient: .live) }
+    ),
+    Reducer { state, action, _ in
+        switch action {
+        case .newEventAction(.newEventSaved(.success)):
+            return Effect(value: RootAction.navigationAction(.updateRoutes([])))
+            
+        default:
+            return .none
+        }
+    }
 )
 
 extension RootStore {

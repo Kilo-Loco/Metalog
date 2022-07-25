@@ -15,6 +15,7 @@ struct NewEvent: Equatable {
 struct EventClient {
     let getEvents: () -> Effect<[Event], MetalogError>
     let createEvent: (NewEvent) -> Effect<Event, MetalogError>
+    let addOccurrence: (Event) -> Effect<Event, MetalogError>
 }
 
 extension EventClient {
@@ -47,6 +48,24 @@ extension EventClient {
                 }
                 .mapError { MetalogError.amplifyError($0) }
                 .eraseToEffect()
+        },
+        addOccurrence: { event in
+            var updatedEvent = event
+            updatedEvent.occurrenceCount += 1
+            
+            let occurrence = Occurrence(
+                timestamp: 0,
+                notes: nil,
+                isBackdated: false,
+                eventID: updatedEvent.id
+            )
+            
+            return Amplify.DataStore.save(occurrence)
+                .flatMap { _ in
+                    return Amplify.DataStore.save(updatedEvent)
+                }
+                .mapError(MetalogError.amplifyError)
+                .eraseToEffect()
         }
     )
     
@@ -69,6 +88,9 @@ extension EventClient {
             )
             
             return Effect(value: event)
+        },
+        addOccurrence: { updatedEvent in
+            return Effect(value: updatedEvent)
         }
     )
 }

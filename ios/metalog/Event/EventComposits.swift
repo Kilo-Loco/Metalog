@@ -5,16 +5,19 @@
 import Combine
 import ComposableArchitecture
 
-struct EventState: Equatable {
+struct EventListState: Equatable {
     var events: IdentifiedArrayOf<Event> = []
 }
 
 enum EventListAction {
+    case onAppear
+    case eventsResponse(Result<[Event], MetalogError>)
     case event(id: Event.ID, action: EventAction)
 }
 
 enum EventAction {
-    case createOccurrence
+    case addOccurrence
+    case addOccurrenceResponse(Result<Event, MetalogError>)
 }
 
 struct EventEnvironment {
@@ -23,14 +26,34 @@ struct EventEnvironment {
 
 let eReducer = Reducer<Event, EventAction, EventEnvironment> { state, action, env in
     switch action {
-    case .createOccurrence:
+    case .addOccurrence:
+        return env.eventClient.addOccurrence(state)
+            .catchToEffect(EventAction.addOccurrenceResponse)
+        
+    case .addOccurrenceResponse(.success(let event)):
+        print("add occurrence response, \(event)")
+        return .none
+        
+    case .addOccurrenceResponse(.failure(let error)):
+        print("add occurrence failed", error)
         return .none
     }
 }
 
-let eventsReducer = Reducer<EventState, EventListAction, EventEnvironment>.combine(
+let eventsReducer = Reducer<EventListState, EventListAction, EventEnvironment>.combine(
     Reducer { state, action, env in
         switch action {
+        case .onAppear:
+            return env.eventClient.getEvents()
+                .catchToEffect(EventListAction.eventsResponse)
+            
+        case .eventsResponse(.success(let events)):
+            state.events = IdentifiedArray(uniqueElements: events)
+            return .none
+            
+        case .eventsResponse(.failure(let error)):
+            return .none
+            
         case .event:
             return .none
         }

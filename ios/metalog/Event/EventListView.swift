@@ -6,27 +6,26 @@ import ComposableArchitecture
 import SwiftUI
 
 struct EventListView: View {
-    let store: Store<RootState, RootAction>
+    let store: Store<EventListState, EventListAction>
     
     var body: some View {
         WithViewStore(store) { viewStore in
             List {
                 ForEachStore(
                     store.scope(
-                        state: \.eventState.events,
-                        action: RootAction.event(id:action:)
+                        state: \.events,
+                        action: EventListAction.event(id:action:)
                     )
                 ) {
                     EventView(store: $0)
-                        .swipeActions(edge: .leading) {
-                            Button(action: { }) {
-                                Image(systemName: "plus")
-                            }
-                        }
+                        
                 }
                 
             }
             .listStyle(.plain)
+            .onAppear {
+                viewStore.send(.onAppear)
+            }
         }
     }
 }
