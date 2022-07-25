@@ -6,38 +6,39 @@ import Combine
 import ComposableArchitecture
 
 struct EventState: Equatable {
-    var events: [Event] = []
+    var events: IdentifiedArrayOf<Event> = []
+}
+
+enum EventListAction {
+    case event(id: Event.ID, action: EventAction)
 }
 
 enum EventAction {
-    case onAppear
-    case dataLoaded(Result<[Event], MetalogError>)
-    case onError(MetalogError)
+    case createOccurrence
 }
 
 struct EventEnvironment {
     let eventClient: EventClient
 }
 
-typealias EventReducer = Reducer<EventState, EventAction, SystemEnvironment<EventEnvironment>>
-typealias EventStore = Store<EventState, EventAction>
-
-let eventReducer = EventReducer { state, action, sysEnv in
+let eReducer = Reducer<Event, EventAction, EventEnvironment> { state, action, env in
     switch action {
-    case .onAppear:
-        return sysEnv.environment.eventClient.getEvents()
-            .receive(on: sysEnv.mainQueue())
-            .catchToEffect()
-            .map(EventAction.dataLoaded)
-        
-    case .dataLoaded(.success(let events)):
-        state.events = events
-        
-    case .dataLoaded(.failure(let error)):
-        debugPrint(error)
-        
-    case .onError:
-        break
+    case .createOccurrence:
+        return .none
     }
-    return .none
 }
+
+let eventsReducer = Reducer<EventState, EventListAction, EventEnvironment>.combine(
+    Reducer { state, action, env in
+        switch action {
+        case .event:
+            return .none
+        }
+    },
+    eReducer.forEach(
+        state: \.events,
+        action: /EventListAction.event(id:action:),
+        environment: { _ in .init(eventClient: .live) }
+    )
+)
+

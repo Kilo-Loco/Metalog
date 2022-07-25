@@ -19,7 +19,6 @@ struct NewEventEnvironment {
 }
 
 typealias NewEventReducer = Reducer<NewEventState, NewEventAction, SystemEnvironment<NewEventEnvironment>>
-typealias NewEventStore = Store<NewEventState, NewEventAction>
 
 let newEventReducer = NewEventReducer { state, action, sysEnv in
     debugPrint(action)

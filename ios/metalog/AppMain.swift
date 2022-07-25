@@ -15,14 +15,7 @@ struct AppMain: App {
     
     var body: some Scene {
         WindowGroup {
-//            FirstView(store: .init(initialState: NavState(), reducer: navReducer, environment: .init()))
-            RootView(
-                store: RootStore(
-                    initialState: RootState(),
-                    reducer: rootReducer,
-                    environment: .live(environment: RootEnvironment())
-                )
-            )
+            RootView(store: RootStore.live)
         }
     }
     

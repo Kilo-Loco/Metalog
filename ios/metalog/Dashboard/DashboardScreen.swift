@@ -6,45 +6,28 @@ import ComposableArchitecture
 import SwiftUI
 import Combine
 import Amplify
+
 struct DashboardScreen: View {
-    let store: DashboardStore
-    func dothething() {
-        let models = [Model]()
-    }
+    let store: RootStore
+    
     var body: some View {
         WithViewStore(store) { viewStore in
             NavigationStack(
                 path: viewStore.binding(
-                    get: \.destinationPaths,
-                    send: { DashboardAction.destinationPathsDidChange($0) }
+                    get: \.navigationState.destinationPaths,
+                    send: { .navigationAction(.updateRoutes($0)) }
                 )
             ) {
                 FloatingActionButton(
                     systemImageName: "square.and.pencil",
-                    action: {
-                        viewStore.send(.destinationPathsDidChange([.createNewEvent]))
-                    }
+                    action: { viewStore.send(.navigationAction(.goTo(.createNewEvent))) }
                 ) {
-                    EventListView(
-                        store: store.scope(
-                            state: \.eventState,
-                            action: DashboardAction.eventAction
-                        )
-                    )
+                    EventListView(store: store)
                 }
                 .navigationTitle("Events")
-                .navigationDestination(for: DashboardDestination.self) { destination in
-                    switch destination {
-                    case .createNewEvent:
-                        NewEventScreen(
-                            store: NewEventStore(
-                                initialState: viewStore.newEventState,
-                                reducer: newEventReducer,
-                                environment: .live(
-                                    environment: .init(eventClient: .live)
-                                )
-                            )
-                        )
+                .navigationDestination(for: Route.self) { destination in
+                    if destination == .createNewEvent {
+                        NewEventScreen(store: store)
                     }
                 }
             }
@@ -54,12 +37,6 @@ struct DashboardScreen: View {
 
 struct DashboardScreen_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardScreen(
-            store: DashboardStore(
-                initialState: .init(),
-                reducer: dashboardReducer,
-                environment: .dev(environment: .init())
-            )
-        )
+        DashboardScreen(store: .dev)
     }
 }

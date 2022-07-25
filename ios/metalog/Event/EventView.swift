@@ -2,25 +2,28 @@
 //  Metalog
 //  License: https://github.com/Kilo-Loco/Metalog/blob/main/LICENSE
 
+import ComposableArchitecture
 import SwiftUI
 
 struct EventView: View {
-    let event: Event
+    let store: Store<Event, EventAction>
     
     var body: some View {
-        HStack(alignment: .top) {
-            Text(event.name)
-                .font(.headline)
-                .padding(.vertical)
-            
-            Spacer()
-            
-            VStack {
-                Text("\(event.updatedAt?.iso8601String ?? "meep")")
-                    .font(.footnote)
+        WithViewStore(store) { viewStore in
+            HStack(alignment: .top) {
+                Text(viewStore.name)
+                    .font(.headline)
+                    .padding(.vertical)
                 
-                Text("\(event.occurrenceCount)")
-                    .font(.title)
+                Spacer()
+                
+                VStack {
+                    Text("\(viewStore.updatedAt?.iso8601String ?? "meep")")
+                        .font(.footnote)
+                    
+                    Text("\(viewStore.occurrenceCount)")
+                        .font(.title)
+                }
             }
         }
     }
@@ -28,6 +31,7 @@ struct EventView: View {
 
 struct EventView_Previews: PreviewProvider {
     static var previews: some View {
-        EventView(event: Event.dummyEvents.first!)
+        EmptyView()
+//        EventView(store: .init(initialState: .init(), reducer: .init(), environment: .live())
     }
 }

@@ -6,34 +6,41 @@ import ComposableArchitecture
 import SwiftUI
 
 struct EventListView: View {
-    let store: EventStore
+    let store: Store<RootState, RootAction>
     
     var body: some View {
         WithViewStore(store) { viewStore in
-            List(viewStore.events) { event in
-                EventView(event: event)
-                    .swipeActions(edge: .leading) {
-                        Button(action: {}) {
-                            Image(systemName: "plus")
+            List {
+                ForEachStore(
+                    store.scope(
+                        state: \.eventState.events,
+                        action: RootAction.event(id:action:)
+                    )
+                ) {
+                    EventView(store: $0)
+                        .swipeActions(edge: .leading) {
+                            Button(action: { }) {
+                                Image(systemName: "plus")
+                            }
                         }
-                    }
+                }
+                
             }
             .listStyle(.plain)
-            .onAppear { viewStore.send(.onAppear) }
         }
+    }
+}
+
+extension EventListView {
+    enum UIAction {
+        case leadingSwipeAction
+        case onAppear
     }
 }
 
 struct EventListView_Previews: PreviewProvider {
     static var previews: some View {
-        EventListView(
-            store: Store(
-                initialState: EventState(),
-                reducer: eventReducer,
-                environment: .dev(
-                    environment: EventEnvironment(eventClient: .dev)
-                )
-            )
-        )
+        EmptyView()
+//        EventListView(store: .unchecked(initialState: .init(), reducer: .empty, environment: .init()))
     }
 }

@@ -10,25 +10,13 @@ struct RootView: View {
     
     var body: some View {
         WithViewStore(store.stateless) { _ in
-            DashboardScreen(
-                store: DashboardStore(
-                    initialState: .init(),
-                    reducer: dashboardReducerPublisher,
-                    environment: .live(environment: .init())
-                )
-            )
+            DashboardScreen(store: store)
         }
     }
 }
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView(
-            store: RootStore(
-                initialState: .init(),
-                reducer: rootReducer,
-                environment: .dev(environment: .init())
-            )
-        )
+        RootView(store: .dev)
     }
 }
