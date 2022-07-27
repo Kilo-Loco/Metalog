@@ -6,7 +6,7 @@ type Location {
 
 type Occurrence @model @auth(rules: [{allow: public}]) {
   id: ID!
-  timestamp: AWSTimestamp!
+  timestamp: AWSDateTime!
   notes: String
   attachmentKeys: [String]
   location: Location
@@ -23,8 +23,9 @@ type Tag @model @auth(rules: [{allow: public}]) {
 type Event @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
-  initialTimestamp: AWSTimestamp!
+  initialTimestamp: AWSDateTime!
   occurrenceCount: Int!
   tags: [Tag] @manyToMany(relationName: "EventTag")
   occurrences: [Occurrence!] @hasMany(indexName: "byEvent", fields: ["id"])
 }
+ 

@@ -31,7 +31,8 @@ struct DashboardScreen: View {
                 }
                 .navigationTitle("Events")
                 .navigationDestination(for: Route.self) { destination in
-                    if destination == .createNewEvent {
+                    
+                    if case .createNewEvent = destination {
                         NewEventScreen(
                             store: store.scope(
                                 state: \.newEventState,

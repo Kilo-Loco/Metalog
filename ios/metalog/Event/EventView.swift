@@ -18,7 +18,7 @@ struct EventView: View {
                 Spacer()
                 
                 VStack {
-                    Text("\(viewStore.updatedAt?.iso8601String ?? "meep")")
+                    Text("\(viewStore.updatedAt?.iso8601String ?? "date")")
                         .font(.footnote)
                     
                     Text("\(viewStore.occurrenceCount)")

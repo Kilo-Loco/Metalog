@@ -27,6 +27,7 @@ let newEventReducer = Reducer<NewEventState, NewEventAction, NewEventEnvironment
             .catchToEffect(NewEventAction.newEventSaved)
         
     case .newEventSaved(.success(let event)):
+        state.newEvent = .init()
         break
     case .newEventSaved(.failure(let error)):
         break

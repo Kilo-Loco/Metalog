@@ -16,16 +16,15 @@ struct EventListView: View {
                         state: \.events,
                         action: EventListAction.event(id:action:)
                     )
-                ) {
-                    EventView(store: $0)
-                        
+                ) { eventStore in
+                    EventView(store: eventStore)
                 }
-                
             }
             .listStyle(.plain)
             .onAppear {
                 viewStore.send(.onAppear)
             }
+            
         }
     }
 }

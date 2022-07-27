@@ -29,7 +29,7 @@ extension EventClient {
         createEvent: { newEvent in
             let eventId = UUID().uuidString
             let occurrence = Occurrence(
-                timestamp: 0,
+                timestamp: .now(),
                 notes: newEvent.notes,
                 isBackdated: false,
                 eventID: eventId
@@ -39,7 +39,7 @@ extension EventClient {
                 .flatMap { savedOccurrence in
                     let event = Event(
                         name: newEvent.name,
-                        initialTimestamp: 0,
+                        initialTimestamp: .now(),
                         occurrenceCount: 1,
                         occurrences: List(elements: [savedOccurrence])
                     )
@@ -54,7 +54,7 @@ extension EventClient {
             updatedEvent.occurrenceCount += 1
             
             let occurrence = Occurrence(
-                timestamp: 0,
+                timestamp: .now(),
                 notes: nil,
                 isBackdated: false,
                 eventID: updatedEvent.id
@@ -74,7 +74,7 @@ extension EventClient {
         createEvent: { newEvent in
             let eventId = UUID().uuidString
             let occurrence = Occurrence(
-                timestamp: 0,
+                timestamp: .now(),
                 notes: newEvent.notes,
                 isBackdated: false,
                 eventID: eventId
@@ -82,7 +82,7 @@ extension EventClient {
             
             let event = Event(
                 name: newEvent.name,
-                initialTimestamp: 0,
+                initialTimestamp: .now(),
                 occurrenceCount: 1,
                 occurrences: List(elements: [occurrence])
             )

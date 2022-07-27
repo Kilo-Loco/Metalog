@@ -4,7 +4,7 @@
 
 import ComposableArchitecture
 
-enum Route {
+enum Route: Equatable, Hashable {
     case createNewEvent
 }
 
@@ -77,7 +77,6 @@ let rootReducer = RootReducer.combine(
         switch action {
         case .newEventAction(.newEventSaved(.success)):
             return Effect(value: RootAction.navigationAction(.updateRoutes([])))
-            
         default:
             return .none
         }

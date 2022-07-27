@@ -30,7 +30,7 @@ extension Event {
     model.fields(
       .id(),
       .field(event.name, is: .required, ofType: .string),
-      .field(event.initialTimestamp, is: .required, ofType: .int),
+      .field(event.initialTimestamp, is: .required, ofType: .dateTime),
       .field(event.occurrenceCount, is: .required, ofType: .int),
       .hasMany(event.tags, is: .optional, ofType: EventTag.self, associatedWith: EventTag.keys.event),
       .hasMany(event.occurrences, is: .optional, ofType: Occurrence.self, associatedWith: Occurrence.keys.eventID),

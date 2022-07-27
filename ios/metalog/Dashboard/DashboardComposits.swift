@@ -16,8 +16,7 @@ struct DashboardEnvironment { }
 
 typealias DashboardReducer = Reducer<DashboardState, DashboardAction, SystemEnvironment<DashboardEnvironment>>
 
-let dashboardReducer = DashboardReducer { state, action, sysEnv in
-    debugPrint("DASHBOARD ACTION", action)
+let dashboardReducer = DashboardReducer { state, action, _ in
     switch action {
     case .doSomething:
         return .none

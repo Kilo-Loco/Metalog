@@ -5,7 +5,7 @@ import Foundation
 public struct Event: Model {
   public let id: String
   public var name: String
-  public var initialTimestamp: Int
+  public var initialTimestamp: Temporal.DateTime
   public var occurrenceCount: Int
   public var tags: List<EventTag>?
   public var occurrences: List<Occurrence>?
@@ -14,7 +14,7 @@ public struct Event: Model {
   
   public init(id: String = UUID().uuidString,
       name: String,
-      initialTimestamp: Int,
+      initialTimestamp: Temporal.DateTime,
       occurrenceCount: Int,
       tags: List<EventTag>? = [],
       occurrences: List<Occurrence> = []) {
@@ -29,7 +29,7 @@ public struct Event: Model {
   }
   internal init(id: String = UUID().uuidString,
       name: String,
-      initialTimestamp: Int,
+      initialTimestamp: Temporal.DateTime,
       occurrenceCount: Int,
       tags: List<EventTag>? = [],
       occurrences: List<Occurrence> = [],

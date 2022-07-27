@@ -5,14 +5,20 @@
 import Combine
 import ComposableArchitecture
 
+struct EventDetailsState: Equatable {
+    let event: Event
+}
+
 struct EventListState: Equatable {
     var events: IdentifiedArrayOf<Event> = []
+    var eventDetailsState: EventDetailsState?
 }
 
 enum EventListAction {
     case onAppear
     case eventsResponse(Result<[Event], MetalogError>)
     case event(id: Event.ID, action: EventAction)
+    case selectEvent(Event)
 }
 
 enum EventAction {
@@ -55,6 +61,10 @@ let eventsReducer = Reducer<EventListState, EventListAction, EventEnvironment>.c
             return .none
             
         case .event:
+            return .none
+            
+        case .selectEvent(let event):
+            state.eventDetailsState = .init(event: event)
             return .none
         }
     },

@@ -4,7 +4,7 @@ import Foundation
 
 public struct Occurrence: Model {
   public let id: String
-  public var timestamp: Int
+  public var timestamp: Temporal.DateTime
   public var notes: String?
   public var attachmentKeys: [String?]?
   public var location: Location?
@@ -14,7 +14,7 @@ public struct Occurrence: Model {
   public var updatedAt: Temporal.DateTime?
   
   public init(id: String = UUID().uuidString,
-      timestamp: Int,
+      timestamp: Temporal.DateTime,
       notes: String? = nil,
       attachmentKeys: [String?]? = nil,
       location: Location? = nil,
@@ -31,7 +31,7 @@ public struct Occurrence: Model {
       updatedAt: nil)
   }
   internal init(id: String = UUID().uuidString,
-      timestamp: Int,
+      timestamp: Temporal.DateTime,
       notes: String? = nil,
       attachmentKeys: [String?]? = nil,
       location: Location? = nil,

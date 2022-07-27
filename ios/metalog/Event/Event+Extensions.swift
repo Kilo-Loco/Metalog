@@ -14,33 +14,39 @@ extension Event: Equatable {
     }
 }
 
+extension Event: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 extension Event: Identifiable {}
 
 extension Event {
     static let dummyEvents: [Event] = [
         Event(
             name: "Make breakfast",
-            initialTimestamp: 1655844047,
+            initialTimestamp: .now(),
             occurrenceCount: 100
         ),
         Event(
             name: "Go to park",
-            initialTimestamp: 1655842047,
+            initialTimestamp: .now(),
             occurrenceCount: 16
         ),
         Event(
             name: "Explain situation",
-            initialTimestamp: 1655834047,
+            initialTimestamp: .now(),
             occurrenceCount: 9
         ),
         Event(
             name: "Incorrect statement",
-            initialTimestamp: 1655744047,
+            initialTimestamp: .now(),
             occurrenceCount: 77
         ),
         Event(
             name: "Go to beach",
-            initialTimestamp: 1654844047,
+            initialTimestamp: .now(),
             occurrenceCount: 3
         ),
     ]
