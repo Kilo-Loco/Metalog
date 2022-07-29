@@ -27,34 +27,39 @@ extension Event {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
-        return formatter.string(from: initialTimestamp.foundationDate)
+        return formatter.string(from: creationDate.foundationDate)
     }
     
     static let dummyEvents: [Event] = [
         Event(
             name: "Make breakfast",
-            initialTimestamp: .now(),
-            occurrenceCount: 100
+            creationDate: .now(),
+            occurrenceCount: 100,
+            lastOccurrenceDate: .now()
         ),
         Event(
             name: "Go to park",
-            initialTimestamp: .now(),
-            occurrenceCount: 16
+            creationDate: .now(),
+            occurrenceCount: 16,
+            lastOccurrenceDate: .now()
         ),
         Event(
             name: "Explain situation",
-            initialTimestamp: .now(),
-            occurrenceCount: 9
+            creationDate: .now(),
+            occurrenceCount: 9,
+            lastOccurrenceDate: .now()
         ),
         Event(
             name: "Incorrect statement",
-            initialTimestamp: .now(),
-            occurrenceCount: 77
+            creationDate: .now(),
+            occurrenceCount: 77,
+            lastOccurrenceDate: .now()
         ),
         Event(
             name: "Go to beach",
-            initialTimestamp: .now(),
-            occurrenceCount: 3
+            creationDate: .now(),
+            occurrenceCount: 3,
+            lastOccurrenceDate: .now()
         ),
     ]
 }

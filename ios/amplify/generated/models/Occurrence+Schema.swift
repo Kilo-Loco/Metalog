@@ -6,7 +6,7 @@ extension Occurrence {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
-    case timestamp
+    case creationDate
     case notes
     case attachmentKeys
     case location
@@ -34,7 +34,7 @@ extension Occurrence {
     
     model.fields(
       .id(),
-      .field(occurrence.timestamp, is: .required, ofType: .dateTime),
+      .field(occurrence.creationDate, is: .required, ofType: .dateTime),
       .field(occurrence.notes, is: .optional, ofType: .string),
       .field(occurrence.attachmentKeys, is: .optional, ofType: .embeddedCollection(of: String.self)),
       .field(occurrence.location, is: .optional, ofType: .embedded(type: Location.self)),

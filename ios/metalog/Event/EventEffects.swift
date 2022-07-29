@@ -29,7 +29,7 @@ extension EventClient {
         createEvent: { newEvent in
             let eventId = UUID().uuidString
             let occurrence = Occurrence(
-                timestamp: .now(),
+                creationDate: .now(),
                 notes: newEvent.notes,
                 isBackdated: false,
                 eventID: eventId
@@ -39,9 +39,10 @@ extension EventClient {
                 .flatMap { savedOccurrence in
                     let event = Event(
                         name: newEvent.name,
-                        initialTimestamp: .now(),
+                        creationDate: .now(),
                         occurrenceCount: 1,
-                        occurrences: List(elements: [savedOccurrence])
+                        occurrences: List(elements: [savedOccurrence]),
+                        lastOccurrenceDate: .now()
                     )
                     
                     return Amplify.DataStore.save(event)
@@ -54,7 +55,7 @@ extension EventClient {
             updatedEvent.occurrenceCount += 1
             
             let occurrence = Occurrence(
-                timestamp: .now(),
+                creationDate: .now(),
                 notes: nil,
                 isBackdated: false,
                 eventID: updatedEvent.id
@@ -74,7 +75,7 @@ extension EventClient {
         createEvent: { newEvent in
             let eventId = UUID().uuidString
             let occurrence = Occurrence(
-                timestamp: .now(),
+                creationDate: .now(),
                 notes: newEvent.notes,
                 isBackdated: false,
                 eventID: eventId
@@ -82,9 +83,10 @@ extension EventClient {
             
             let event = Event(
                 name: newEvent.name,
-                initialTimestamp: .now(),
+                creationDate: .now(),
                 occurrenceCount: 1,
-                occurrences: List(elements: [occurrence])
+                occurrences: List(elements: [occurrence]),
+                lastOccurrenceDate: .now()
             )
             
             return Effect(value: event)
