@@ -17,7 +17,12 @@ struct EventListView: View {
                         action: EventListAction.event(id:action:)
                     )
                 ) { eventStore in
-                    EventView(store: eventStore)
+                    NavigationLink {
+                        EventDetailsView(store: eventStore)
+                    } label: {
+                        EventView(store: eventStore)
+                    }
+
                 }
             }
             .listStyle(.plain)

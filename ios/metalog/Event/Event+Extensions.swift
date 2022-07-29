@@ -23,6 +23,13 @@ extension Event: Hashable {
 extension Event: Identifiable {}
 
 extension Event {
+    var dateString: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter.string(from: initialTimestamp.foundationDate)
+    }
+    
     static let dummyEvents: [Event] = [
         Event(
             name: "Make breakfast",

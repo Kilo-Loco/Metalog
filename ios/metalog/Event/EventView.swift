@@ -9,24 +9,24 @@ struct EventView: View {
     let store: Store<Event, EventAction>
     
     var body: some View {
-        WithViewStore(store) { viewStore in
+        WithViewStore(store) { event in
             HStack(alignment: .top) {
-                Text(viewStore.name)
+                Text(event.name)
                     .font(.headline)
                     .padding(.vertical)
                 
                 Spacer()
                 
-                VStack {
-                    Text("\(viewStore.updatedAt?.iso8601String ?? "date")")
+                VStack(alignment: .trailing) {
+                    Text("\(event.dateString)")
                         .font(.footnote)
                     
-                    Text("\(viewStore.occurrenceCount)")
+                    Text("\(event.occurrenceCount)")
                         .font(.title)
                 }
             }
             .swipeActions(edge: .leading) {
-                Button(action: { viewStore.send(EventAction.addOccurrence) }) {
+                Button(action: { event.send(EventAction.addOccurrence) }) {
                     Image(systemName: "plus")
                 }
             }

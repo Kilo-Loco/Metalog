@@ -24,6 +24,7 @@
 		7C180B7028652ECD00A7CB5E /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B6F28652ECD00A7CB5E /* FormField.swift */; };
 		7C180B72286584B100A7CB5E /* NewEventComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B71286584B100A7CB5E /* NewEventComposits.swift */; };
 		7C681AC52877EAFF006711B2 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C681AC42877EAFF006711B2 /* Practice.swift */; };
+		7CB512AA289449F5000EC38B /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB512A9289449F5000EC38B /* EventDetailsView.swift */; };
 		7CB867F1285B823E00A6AE3F /* RootComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB867F0285B823E00A6AE3F /* RootComposits.swift */; };
 		7CB867F4285B85E300A6AE3F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB867F3285B85E300A6AE3F /* ComposableArchitecture */; };
 		7CB867F6285B8D2F00A6AE3F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB867F5285B8D2F00A6AE3F /* RootView.swift */; };
@@ -61,6 +62,7 @@
 		7C180B6F28652ECD00A7CB5E /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		7C180B71286584B100A7CB5E /* NewEventComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventComposits.swift; sourceTree = "<group>"; };
 		7C681AC42877EAFF006711B2 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
+		7CB512A9289449F5000EC38B /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		7CB867F0285B823E00A6AE3F /* RootComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComposits.swift; sourceTree = "<group>"; };
 		7CB867F5285B8D2F00A6AE3F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7CB8681228623BC800A6AE3F /* EventComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComposits.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				7CB8681228623BC800A6AE3F /* EventComposits.swift */,
+				7CB512A9289449F5000EC38B /* EventDetailsView.swift */,
 				7CB8681428623C3E00A6AE3F /* Event+Extensions.swift */,
 				7CB8681B286260EC00A6AE3F /* EventEffects.swift */,
 				7CB8681D286265AC00A6AE3F /* EventView.swift */,
@@ -334,6 +337,7 @@
 				F226286E823A1058C8F5163E /* Tag+Schema.swift in Sources */,
 				7CB8681528623C3E00A6AE3F /* Event+Extensions.swift in Sources */,
 				9CFF797F9F4DD561862FAB15 /* Tag.swift in Sources */,
+				7CB512AA289449F5000EC38B /* EventDetailsView.swift in Sources */,
 				7CB8681C286260EC00A6AE3F /* EventEffects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
