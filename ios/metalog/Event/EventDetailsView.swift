@@ -6,27 +6,32 @@ import ComposableArchitecture
 import SwiftUI
 
 struct EventDetailsView: View {
-    let store: Store<Event, EventAction>
+    let store: Store<EventDetailsState, EventDetailsAction>
     
     var body: some View {
-        WithViewStore(store) { event in
+        WithViewStore(store) { viewStore in
             VStack {
-                Text(event.dateString)
-                Text("\(event.occurrenceCount)")
+                Text(viewStore.event.dateString)
+                Text("\(viewStore.event.occurrenceCount)")
+                List(viewStore.occurrences) {
+                    Text($0.id)
+                }
             }
-            .navigationTitle(event.name)
+            .navigationTitle(viewStore.event.name)
+            .onAppear { viewStore.send(.onAppear) }
         }
     }
 }
 
 struct EventDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailsView(
-            store: .init(
-                initialState: Event.dummyEvents.first!,
-                reducer: eReducer,
-                environment: .init(eventClient: .dev)
-            )
-        )
+        EmptyView()
+//        EventDetailsView(
+//            store: .init(
+//                initialState: Event.dummyEvents.first!,
+//                reducer: eReducer,
+//                environment: .init(eventClient: .dev)
+//            )
+//        )
     }
 }

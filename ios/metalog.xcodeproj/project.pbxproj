@@ -25,6 +25,8 @@
 		7C180B72286584B100A7CB5E /* NewEventComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C180B71286584B100A7CB5E /* NewEventComposits.swift */; };
 		7C681AC52877EAFF006711B2 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C681AC42877EAFF006711B2 /* Practice.swift */; };
 		7CB512AA289449F5000EC38B /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB512A9289449F5000EC38B /* EventDetailsView.swift */; };
+		7CB512AD28944E9C000EC38B /* Occurrence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB512AC28944E9C000EC38B /* Occurrence+Extensions.swift */; };
+		7CB512AF28944EFF000EC38B /* EventDetailsComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB512AE28944EFF000EC38B /* EventDetailsComposits.swift */; };
 		7CB867F1285B823E00A6AE3F /* RootComposits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB867F0285B823E00A6AE3F /* RootComposits.swift */; };
 		7CB867F4285B85E300A6AE3F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB867F3285B85E300A6AE3F /* ComposableArchitecture */; };
 		7CB867F6285B8D2F00A6AE3F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB867F5285B8D2F00A6AE3F /* RootView.swift */; };
@@ -63,6 +65,8 @@
 		7C180B71286584B100A7CB5E /* NewEventComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventComposits.swift; sourceTree = "<group>"; };
 		7C681AC42877EAFF006711B2 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
 		7CB512A9289449F5000EC38B /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
+		7CB512AC28944E9C000EC38B /* Occurrence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Occurrence+Extensions.swift"; sourceTree = "<group>"; };
+		7CB512AE28944EFF000EC38B /* EventDetailsComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsComposits.swift; sourceTree = "<group>"; };
 		7CB867F0285B823E00A6AE3F /* RootComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComposits.swift; sourceTree = "<group>"; };
 		7CB867F5285B8D2F00A6AE3F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7CB8681228623BC800A6AE3F /* EventComposits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComposits.swift; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		7CB512AB28944E7B000EC38B /* ModelExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				7CB8681428623C3E00A6AE3F /* Event+Extensions.swift */,
+				7CB512AC28944E9C000EC38B /* Occurrence+Extensions.swift */,
+			);
+			path = ModelExtensions;
+			sourceTree = "<group>";
+		};
 		7CB867ED285B81E500A6AE3F /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,12 +157,12 @@
 			children = (
 				7CB8681228623BC800A6AE3F /* EventComposits.swift */,
 				7CB512A9289449F5000EC38B /* EventDetailsView.swift */,
-				7CB8681428623C3E00A6AE3F /* Event+Extensions.swift */,
 				7CB8681B286260EC00A6AE3F /* EventEffects.swift */,
 				7CB8681D286265AC00A6AE3F /* EventView.swift */,
 				7CB8681F286268E300A6AE3F /* EventListView.swift */,
 				7C180B6D28652E2F00A7CB5E /* NewEventView.swift */,
 				7C180B71286584B100A7CB5E /* NewEventComposits.swift */,
+				7CB512AE28944EFF000EC38B /* EventDetailsComposits.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -186,6 +199,7 @@
 		7CCDBF9C285AACD100C88795 /* metalog */ = {
 			isa = PBXGroup;
 			children = (
+				7CB512AB28944E7B000EC38B /* ModelExtensions */,
 				7CCDBF9D285AACD100C88795 /* AppMain.swift */,
 				7C180B642865118D00A7CB5E /* Auth */,
 				7CB8681628623EAD00A6AE3F /* Shared */,
@@ -330,6 +344,7 @@
 				2F777DFFD1F3FA929A79B007 /* Location+Schema.swift in Sources */,
 				95ECD27A528B93E7BDFDC2F3 /* Location.swift in Sources */,
 				7CB8681A2862440600A6AE3F /* SystemEnvironment.swift in Sources */,
+				7CB512AD28944E9C000EC38B /* Occurrence+Extensions.swift in Sources */,
 				BAD543EB55148C2D89CD9F76 /* Occurrence+Schema.swift in Sources */,
 				7CB8681E286265AC00A6AE3F /* EventView.swift in Sources */,
 				7C180B6E28652E2F00A7CB5E /* NewEventView.swift in Sources */,
@@ -339,6 +354,7 @@
 				9CFF797F9F4DD561862FAB15 /* Tag.swift in Sources */,
 				7CB512AA289449F5000EC38B /* EventDetailsView.swift in Sources */,
 				7CB8681C286260EC00A6AE3F /* EventEffects.swift in Sources */,
+				7CB512AF28944EFF000EC38B /* EventDetailsComposits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

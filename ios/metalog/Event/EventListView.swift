@@ -11,18 +11,36 @@ struct EventListView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             List {
-                ForEachStore(
-                    store.scope(
-                        state: \.events,
-                        action: EventListAction.event(id:action:)
-                    )
-                ) { eventStore in
+//                ForEachStore(
+//                    store.scope(
+//                        state: \.events,
+//                        action: EventListAction.event(id:action:)
+//                    )
+//                ) { eventStore in
+//                    NavigationLink {
+//                        EventDetailsView(store: eventStore)
+//                    } label: {
+//                        EventView(store: eventStore)
+//                    }
+//                }
+//                
+                ForEach(viewStore.events) { event in
                     NavigationLink {
-                        EventDetailsView(store: eventStore)
+                        EventDetailsView(
+                            store: .init(
+                                initialState: .init(event: event),
+                                reducer: eventDetailsReducer,
+                                environment: .init(eventClient: .live)
+                            )
+                        )
                     } label: {
-                        EventView(store: eventStore)
+                        EventView(
+                            store: .init(
+                                initialState: event,
+                                reducer: eReducer,
+                                environment: .init(eventClient: .live))
+                        )
                     }
-
                 }
             }
             .listStyle(.plain)

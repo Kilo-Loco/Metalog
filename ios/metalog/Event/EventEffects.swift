@@ -16,6 +16,7 @@ struct EventClient {
     let getEvents: () -> Effect<[Event], MetalogError>
     let createEvent: (NewEvent) -> Effect<Event, MetalogError>
     let addOccurrence: (Event) -> Effect<Event, MetalogError>
+    let getOccurrencesForEvent: (Event) -> Effect<[Occurrence], MetalogError>
 }
 
 extension EventClient {
@@ -67,6 +68,11 @@ extension EventClient {
                 }
                 .mapError(MetalogError.amplifyError)
                 .eraseToEffect()
+        },
+        getOccurrencesForEvent: { event in
+            return Amplify.DataStore.query(Occurrence.self, where: Occurrence.keys.eventID == event.id)
+                .mapError(MetalogError.amplifyError)
+                .eraseToEffect()
         }
     )
     
@@ -93,6 +99,9 @@ extension EventClient {
         },
         addOccurrence: { updatedEvent in
             return Effect(value: updatedEvent)
+        },
+        getOccurrencesForEvent: { _ in
+            return .init(value: [])
         }
     )
 }
