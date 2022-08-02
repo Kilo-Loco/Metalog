@@ -25,11 +25,11 @@ struct EventView: View {
                         .font(.title)
                 }
             }
-            .swipeActions(edge: .leading) {
-                Button(action: { event.send(EventAction.addOccurrence) }) {
-                    Image(systemName: "plus")
-                }
-            }
+//            .swipeActions(edge: .leading) {
+//                Button(action: { event.send(EventAction.addOccurrence) }) {
+//                    Image(systemName: "plus")
+//                }
+//            }
         }
     }
 }

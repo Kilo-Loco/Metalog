@@ -11,19 +11,6 @@ struct EventListView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             List {
-//                ForEachStore(
-//                    store.scope(
-//                        state: \.events,
-//                        action: EventListAction.event(id:action:)
-//                    )
-//                ) { eventStore in
-//                    NavigationLink {
-//                        EventDetailsView(store: eventStore)
-//                    } label: {
-//                        EventView(store: eventStore)
-//                    }
-//                }
-//                
                 ForEach(viewStore.events) { event in
                     NavigationLink {
                         EventDetailsView(
@@ -41,6 +28,12 @@ struct EventListView: View {
                                 environment: .init(eventClient: .live))
                         )
                     }
+                    .swipeActions(edge: .leading) {
+                        Button(
+                            action: { viewStore.send(EventListAction.event(id: event.id, action: .addOccurrence)) },
+                            label: { Image(systemName: "plus") }
+                        )
+                    }
                 }
             }
             .listStyle(.plain)
@@ -49,13 +42,6 @@ struct EventListView: View {
             }
             
         }
-    }
-}
-
-extension EventListView {
-    enum UIAction {
-        case leadingSwipeAction
-        case onAppear
     }
 }
 
