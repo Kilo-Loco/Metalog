@@ -39,6 +39,7 @@ extension EventClient {
             return Amplify.DataStore.save(occurrence)
                 .flatMap { savedOccurrence in
                     let event = Event(
+                        id: eventId,
                         name: newEvent.name,
                         creationDate: .now(),
                         occurrenceCount: 1,
@@ -88,6 +89,7 @@ extension EventClient {
             )
             
             let event = Event(
+                id: eventId,
                 name: newEvent.name,
                 creationDate: .now(),
                 occurrenceCount: 1,
