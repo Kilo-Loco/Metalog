@@ -13,6 +13,7 @@ struct FloatingActionButton<Content: View>: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             content()
+                .frame(maxWidth: .infinity)
             
             Button(action: action) {
                 Image(systemName: systemImageName)

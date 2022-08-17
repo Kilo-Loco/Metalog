@@ -7,6 +7,10 @@ import ComposableArchitecture
 struct EventDetailsState: Equatable {
     let event: Event
     var occurrences: IdentifiedArrayOf<Occurrence> = []
+    
+    var occurrencesWithNotes: IdentifiedArrayOf<Occurrence> {
+        occurrences.filter { $0.notes != nil }
+    }
 }
 
 enum EventDetailsAction {

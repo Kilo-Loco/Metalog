@@ -10,11 +10,21 @@ struct EventDetailsView: View {
     
     var body: some View {
         WithViewStore(store) { viewStore in
-            VStack {
-                Text(viewStore.event.dateString)
-                Text("\(viewStore.event.occurrenceCount)")
-                List(viewStore.occurrences) {
-                    Text($0.id)
+            FloatingActionButton(systemImageName: "plus", action: {}) {
+                VStack {
+                    Text(viewStore.event.dateString)
+                    Text("\(viewStore.event.occurrenceCount)")
+                    if viewStore.occurrencesWithNotes.isEmpty {
+                        Text("No occurrences with notes")
+                            .bold()
+                        Spacer()
+                    } else {
+                        List(viewStore.occurrencesWithNotes) { occurrence in
+                            if let notes = occurrence.notes {
+                                Text(notes)
+                            }
+                        }
+                    }
                 }
             }
             .navigationTitle(viewStore.event.name)
